@@ -53,6 +53,7 @@ export const onlineExhibition = {
   qr: "/online-exhibition.png",
   // 대상 사이트에 SSL 인증서 없음 → http 로 연결 (https 는 연결 실패)
   url: "http://exhibition.hyue-archi.com/celebration/",
+  openLabel: "7월 20일 OPEN",
 };
 
 // 후원사 — scale = 원형 칩 안에서 로고 박스 최대 크기(%). 가로형 워드마크↑ / 정사각 심볼↓ 로 시각 정규화.

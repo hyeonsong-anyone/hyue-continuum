@@ -92,7 +92,10 @@ export function Information() {
               <span className="text-[13px] text-ink-sub">
                 QR을 스캔하거나 탭하면 온라인 전시로 이동합니다
               </span>
-              <span className="mt-1 text-[13px] text-accent">바로가기 →</span>
+              <span className="mt-1 text-[13px] font-bold tracking-wide text-accent-soft">
+                {onlineExhibition.openLabel}
+              </span>
+              <span className="text-[13px] text-accent">바로가기 →</span>
             </span>
           </a>
         </RevealItem>
