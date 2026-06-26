@@ -124,9 +124,13 @@ export async function POST(req: NextRequest) {
 
     if (error) throw error;
     return NextResponse.json({ message: data as GuestMessage }, { status: 201 });
-  } catch {
+  } catch (e) {
+    // TODO(임시진단): 원인 파악 후 detail 제거
     return NextResponse.json(
-      { error: "저장에 실패했습니다. 잠시 후 다시 시도해주세요." },
+      {
+        error: "저장에 실패했습니다. 잠시 후 다시 시도해주세요.",
+        detail: e instanceof Error ? e.message : String(e),
+      },
       { status: 500 },
     );
   }
