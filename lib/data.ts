@@ -80,8 +80,7 @@ export const food: FoodCategory[] = [
     label: "일식",
     items: [
       { name: "마츠미 석촌호수본점", addr: "송파구 백제고분로 262", hours: "11:30–21:00 (브레이크 15:00–17:00 / 일 휴무)", dist: "200m · 도보 3분", link: "https://naver.me/GtURne9C" },
-      // TODO_VERIFY: 어니언스/용봉서울이 원본 카드에서 동일 링크(5O2vXbYX). 게시 전 올바른 링크 1개 확인 필요.
-      { name: "어니언스 석촌호수", addr: "송파구 삼학사로 51", hours: "11:30–21:00 (브레이크 15:00–17:00 / 일 휴무)", dist: "373m · 도보 5분", link: "https://naver.me/5O2vXbYX" },
+      { name: "어니언스 석촌호수", addr: "송파구 삼학사로 51", hours: "11:30–21:00 (브레이크 15:00–17:00 / 일 휴무)", dist: "373m · 도보 5분", link: "https://naver.me/x3cDdXyg" },
       { name: "야키토리 나니야", addr: "송파구 삼전로 16", hours: "18:00–01:00 (월 휴무)", dist: "495m · 도보 7분", link: "https://naver.me/x5GolclU" },
     ],
   },
@@ -89,8 +88,7 @@ export const food: FoodCategory[] = [
     key: "chinese",
     label: "중식",
     items: [
-      // TODO_VERIFY: 용봉서울 링크 어니언스와 중복(5O2vXbYX). 확인 필요.
-      { name: "용봉서울", addr: "송파구 삼학사로 52 나래울빌딩", hours: "10:00–21:00", dist: "389m · 도보 5분", link: "https://naver.me/5O2vXbYX" },
+      { name: "용봉서울", addr: "송파구 삼학사로 52 나래울빌딩", hours: "10:00–21:00", dist: "389m · 도보 5분", link: "https://naver.me/502vXbYX" },
       { name: "다래연 삼전점", addr: "송파구 백제고분로 21길 10", hours: "11:00–22:00 (일 휴무)", dist: "465m · 도보 7분", link: "https://naver.me/FlZkvlBn" },
       { name: "형제짬뽕", addr: "송파구 삼전로 10길 68", hours: "11:00–20:20 (브레이크 15:00–16:00)", dist: "543m · 도보 9분", link: "https://naver.me/F0z2OhWR" },
     ],
