@@ -22,11 +22,6 @@ export function Information() {
         <RevealItem>
           <p className="text-[15px] leading-[1.85] text-ink/90">{exhibition.concept}</p>
         </RevealItem>
-        <RevealItem>
-          <p className="mt-6 text-right text-sm font-semibold text-accent">
-            {exhibition.closing}
-          </p>
-        </RevealItem>
       </Reveal>
 
       {/* 일정 / 장소 */}
