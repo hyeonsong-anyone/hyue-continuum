@@ -7,13 +7,13 @@ export const exhibition = {
   title: "CONTINUUM",
   host: "2026 한양대학교 ERICA 건축학부 졸업전시",
   hostEn: "2026 HANYANG UNIV. ERICA SCHOOL OF ARCHITECTURE GRADUATION EXHIBITION",
-  period: "2026.07.04 — 07.08",
+  period: "2026.07.04 — 07.07",
   periodFrom: "2026.07.04",
-  periodTo: "07.08",
-  // 포스터 기준: 첫날 13:00 개막, 중간 10–20, 마지막날 14:00 종료 (일요일 단축 없음)
+  periodTo: "07.07",
+  // 최종 포스터 기준: 07.04(토) 10AM ~ 07.07(화) 8PM, 일요일(07.05) 10–19
   schedule: [
     { day: "07.04 – 07.07", time: "10AM – 20PM" },
-    { day: "07.08 (수)", time: "~ 14:00 종료" },
+    { day: "07.05 (일)", time: "10AM – 19PM" },
   ],
   venue: "송파예술문화회관 예송미술관 제1·2관",
   venueSub: "송파구민회관 1층",

@@ -22,19 +22,19 @@ const displayEn = Inter({
 export const metadata: Metadata = {
   title: "CONTINUUM — 2026 한양대학교 ERICA 건축학부 졸업전시",
   description:
-    "2026 한양대학교 ERICA 건축학부 졸업전시 CONTINUUM에 초대합니다. 2026.07.04–07.08, 송파예술문화회관 예송미술관 제1·2관.",
+    "2026 한양대학교 ERICA 건축학부 졸업전시 CONTINUUM에 초대합니다. 2026.07.04–07.07, 송파예술문화회관 예송미술관 제1·2관.",
   openGraph: {
     title: "CONTINUUM — 2026 한양대 ERICA 건축학부 졸업전시",
     description:
-      "2026.07.04–07.08 · 송파예술문화회관 예송미술관 제1·2관. 끊임없이 이어져 온 흐름 위의 한 단면.",
+      "2026.07.04–07.07 · 송파예술문화회관 예송미술관 제1·2관. 끊임없이 이어져 온 흐름 위의 한 단면.",
     locale: "ko_KR",
     type: "website",
-    images: [{ url: "/og-image.jpg", width: 1414, height: 1999, alt: "CONTINUUM 2026 한양대 ERICA 건축학부 졸업전시" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 1697, alt: "CONTINUUM 2026 한양대 ERICA 건축학부 졸업전시" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "CONTINUUM — 2026 한양대 ERICA 건축학부 졸업전시",
-    description: "2026.07.04–07.08 · 송파예술문화회관 예송미술관 제1·2관.",
+    description: "2026.07.04–07.07 · 송파예술문화회관 예송미술관 제1·2관.",
     images: ["/og-image.jpg"],
   },
 };
