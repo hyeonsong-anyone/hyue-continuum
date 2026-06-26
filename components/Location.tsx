@@ -1,8 +1,9 @@
-import { exhibition, transit, mapLinks } from "@/lib/data";
+import { exhibition, transit } from "@/lib/data";
 import { SectionHeader } from "./SectionHeader";
 import { Reveal, RevealItem } from "./Reveal";
 import { NaverMap } from "./NaverMap";
-import { LabelRule, BlueBar, LinkButton } from "./ui/primitives";
+import { NaverRouteButton } from "./NaverRoute";
+import { LabelRule, BlueBar } from "./ui/primitives";
 
 export function Location() {
   return (
@@ -23,7 +24,7 @@ export function Location() {
           <NaverMap />
         </RevealItem>
         <RevealItem className="mb-14 flex justify-center">
-          <LinkButton href={mapLinks.naverDirections}>네이버 지도 길찾기 →</LinkButton>
+          <NaverRouteButton />
         </RevealItem>
       </Reveal>
 

@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { venueGeo, venueLabel, mapLinks } from "@/lib/data";
+import { venueGeo, venueLabel } from "@/lib/data";
+import { openNaverRoute } from "./NaverRoute";
 
 // 도메인 제한이 걸린 공개 키 (Vercel env). 미설정/인증실패 시 링크로 우아하게 폴백.
 const CLIENT_ID = process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID;
@@ -12,10 +13,6 @@ declare global {
     naver?: { maps?: unknown };
     navermap_authFailure?: () => void;
   }
-}
-
-function openDirections() {
-  window.open(mapLinks.naverDirections, "_blank", "noopener,noreferrer");
 }
 
 export function NaverMap() {
@@ -50,8 +47,8 @@ export function NaverMap() {
       info.open(map, marker);
 
       // 지도/마커/라벨 어디를 눌러도 길찾기로 이동
-      naver.maps.Event.addListener(map, "click", openDirections);
-      naver.maps.Event.addListener(marker, "click", openDirections);
+      naver.maps.Event.addListener(map, "click", openNaverRoute);
+      naver.maps.Event.addListener(marker, "click", openNaverRoute);
     }
 
     window.navermap_authFailure = () => !cancelled && setFailed(true);
@@ -82,7 +79,7 @@ export function NaverMap() {
     return (
       <button
         type="button"
-        onClick={openDirections}
+        onClick={openNaverRoute}
         className="flex h-[230px] w-full flex-col items-center justify-center gap-1 bg-card text-accent"
       >
         <span className="text-[14px] font-semibold">{venueLabel}</span>

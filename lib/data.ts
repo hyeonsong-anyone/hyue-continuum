@@ -168,13 +168,6 @@ export const food: FoodCategory[] = [
 ];
 
 // 전시장 좌표 (예송미술관, 백제고분로 242 — Nominatim 확인)
+// 길찾기는 components/NaverRoute.tsx 에서 앱 스킴(nmap://)+웹 폴백으로 처리.
 export const venueGeo = { lat: 37.5020614, lng: 127.0932646 };
 export const venueLabel = "송파구민회관 예송미술관 제1·2관";
-
-// 네이버 길찾기 — 도착지(전시장) 좌표/이름만 지정 (출발지는 사용자 현위치/직접 입력)
-export const mapLinks = {
-  naverDirections:
-    "https://map.naver.com/index.nhn?menu=route&pathType=1" +
-    `&etext=${encodeURIComponent(venueLabel)}` +
-    `&elng=${venueGeo.lng}&elat=${venueGeo.lat}`,
-};
