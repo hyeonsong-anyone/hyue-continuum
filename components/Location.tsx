@@ -1,6 +1,7 @@
 import { exhibition, transit, mapLinks } from "@/lib/data";
 import { SectionHeader } from "./SectionHeader";
 import { Reveal, RevealItem } from "./Reveal";
+import { NaverMap } from "./NaverMap";
 import { LabelRule, BlueBar, LinkButton } from "./ui/primitives";
 
 export function Location() {
@@ -17,15 +18,9 @@ export function Location() {
           <p className="text-[13px] text-ink-sub">구주소 · {exhibition.addressOld}</p>
         </RevealItem>
 
-        {/* 지도 임베드 */}
+        {/* 네이버 지도 (Dynamic Map) */}
         <RevealItem className="mb-4 overflow-hidden rounded-2xl border border-line">
-          <iframe
-            title="송파예술문화회관 지도"
-            src={mapLinks.googleEmbed}
-            className="h-[230px] w-full"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          <NaverMap />
         </RevealItem>
         <RevealItem className="mb-14 flex justify-center">
           <LinkButton href={mapLinks.naverDirections}>네이버 지도 길찾기 →</LinkButton>

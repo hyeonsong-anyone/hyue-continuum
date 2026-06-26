@@ -113,13 +113,10 @@ export const food: FoodCategory[] = [
   },
 ];
 
-// 길찾기/지도 링크
+// 전시장 좌표 (예송미술관, 백제고분로 242 — Nominatim 확인)
+export const venueGeo = { lat: 37.5020614, lng: 127.0932646 };
+
+// 길찾기/지도 링크 (네이버)
 export const mapLinks = {
-  // 네이버 지도 길찾기 (송파예술문화회관)
-  naverDirections: "https://map.naver.com/p/search/송파예술문화회관",
-  // Google Maps 키 불필요 임베드 (장소 검색)
-  googleEmbed:
-    "https://www.google.com/maps?q=" +
-    encodeURIComponent("서울시 송파구 백제고분로 242 송파구민회관") +
-    "&z=16&output=embed",
+  naverDirections: "https://map.naver.com/p/search/송파예술문화회관 예송미술관",
 };
