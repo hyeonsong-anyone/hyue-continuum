@@ -7,12 +7,15 @@ export const exhibition = {
   title: "CONTINUUM",
   host: "2026 한양대학교 ERICA 건축학부 졸업전시",
   hostEn: "2026 HANYANG UNIV. ERICA SCHOOL OF ARCHITECTURE GRADUATION EXHIBITION",
-  period: "2026.07.04 — 07.07",
+  period: "2026.07.04 — 07.08",
   periodFrom: "2026.07.04",
-  periodTo: "07.07",
-  hours: "10AM – 20PM",
-  // 07.04(토)~07.07(화) 중 일요일은 07.05 하루 → 그 날만 19시 마감
-  hoursSunday: "07.05 (일) 10AM – 19PM",
+  periodTo: "07.08",
+  // 포스터 기준: 첫날 13:00 개막, 중간 10–20, 마지막날 14:00 종료 (일요일 단축 없음)
+  schedule: [
+    { day: "07.04 (토)", time: "13:00 개막" },
+    { day: "07.05 – 07.07", time: "10AM – 20PM" },
+    { day: "07.08 (수)", time: "~ 14:00 종료" },
+  ],
   venue: "송파예술문화회관 예송미술관 제1·2관",
   venueSub: "송파구민회관 1층",
   address: "서울시 송파구 백제고분로 242",
@@ -22,6 +25,56 @@ export const exhibition = {
   closing: "연속은 계속된다",
   instagram: ["@HYUE.GRAD", "@HYUESOA"],
 } as const;
+
+// 초대의 글 (정인하 학부장)
+export const greeting = {
+  body: [
+    "안녕하십니까.",
+    "2026 년 한양대학교 에리카 건축학전공의 졸업전시회에 여러분을 정중히 초대합니다.",
+    "이번 전시는 학생들이 오랜 시간 동안 배우고 탐구하며 쌓아온 고민과 열정의 결실을 선보이는 자리입니다. 각자의 시선으로 공간과 도시, 사람과 환경에 대한 질문을 던지고, 이를 건축적 언어로 풀어낸 다양한 작품들을 만나보실 수 있습니다.",
+    "설계 과정 속 수많은 도전과 성찰을 담아낸 작품들이 여러분과 소통할 수 있기를 기대합니다. 미래 건축가들의 새로운 시선과 가능성을 함께 나누는 뜻깊은 자리에 귀한 걸음으로 함께해 주시기 바랍니다.",
+  ],
+  date: "2026.07.04",
+  role: "한양대학교 에리카캠퍼스 건축학부 학부장",
+  signer: "정인하",
+};
+
+// 타임테이블 (7/6)
+export const timeTable = {
+  date: "7/6",
+  items: [
+    { time: "11:00 – 11:30", label: "오프닝 행사" },
+    { time: "13:00 ~", label: "크리틱" },
+  ],
+};
+
+// 온라인 전시 QR
+export const onlineExhibition = {
+  qr: "/online-exhibition.png",
+  url: "https://exhibition.hyue-archi.com/celebration/",
+};
+
+// 후원사 — scale = 원형 칩 안에서 로고 박스 최대 크기(%). 가로형 워드마크↑ / 정사각 심볼↓ 로 시각 정규화.
+export type Sponsor = { src: string; name: string; scale: number };
+export const sponsors: Sponsor[] = [
+  { src: "/sponsors/junglim.png", name: "정림건축", scale: 90 },
+  { src: "/sponsors/seongihoek.png", name: "선기획 SUN+PARTNERS", scale: 90 },
+  { src: "/sponsors/hk.png", name: "HK건축사사무소", scale: 88 },
+  { src: "/sponsors/haean.jpg", name: "해안건축", scale: 86 },
+  { src: "/sponsors/kumho.svg", name: "금호건설", scale: 84 },
+  { src: "/sponsors/gangnam.png", name: "강남건축", scale: 82 },
+  { src: "/sponsors/dl-enc.png", name: "DL E&C", scale: 88 },
+  { src: "/sponsors/aplus.png", name: "에이플러스건축", scale: 80 },
+  { src: "/sponsors/anu.png", name: "ANU", scale: 86 },
+  { src: "/sponsors/siaplan.png", name: "시아플랜", scale: 86 },
+  { src: "/sponsors/bs-hanyang.webp", name: "BS한양", scale: 80 },
+  { src: "/sponsors/yuseon.png", name: "유선엔지니어링", scale: 76 },
+  { src: "/sponsors/jds.png", name: "JDS", scale: 82 },
+  { src: "/sponsors/espas.png", name: "에스파스건축", scale: 72 },
+  { src: "/sponsors/haengnim.png", name: "행림건축", scale: 92 },
+  { src: "/sponsors/tomoon.png", name: "토문건축", scale: 64 },
+  { src: "/sponsors/gunwon.png", name: "건원건축", scale: 60 },
+];
 
 export type TransitItem = { line: string; station: string; route: string };
 
