@@ -11,7 +11,7 @@ const MSG_MAX = 200;
 
 function Card({ m }: { m: Msg }) {
   return (
-    <div className="mx-2 flex w-[240px] shrink-0 flex-col rounded-2xl border border-line bg-card px-4 py-2.5">
+    <div className="mx-2 flex w-[240px] shrink-0 flex-col justify-center rounded-2xl border border-line bg-card px-4 py-2.5">
       <p className="whitespace-pre-wrap text-[13px] leading-snug text-ink/90">
         {m.message}
       </p>
