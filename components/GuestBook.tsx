@@ -20,6 +20,16 @@ function Card({ m }: { m: Msg }) {
   );
 }
 
+/** Fisher-Yates 셔플 (원본 불변). */
+function shuffle<T>(list: T[]): T[] {
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 /** 마퀴 트랙이 항상 화면을 채우도록 충분히 복제. */
 function buildTrack(list: Msg[]): Msg[] {
   if (list.length === 0) return [];
@@ -38,7 +48,7 @@ export function GuestBook() {
   useEffect(() => {
     fetch("/api/guestbook")
       .then((r) => r.json())
-      .then((d) => setMessages(d.messages ?? []))
+      .then((d) => setMessages(shuffle(d.messages ?? [])))
       .catch(() => {});
   }, []);
 
