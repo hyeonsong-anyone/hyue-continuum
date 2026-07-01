@@ -56,7 +56,7 @@ export const onlineExhibition = {
 };
 
 // 후원사 — scale = 원형 칩 안에서 로고 박스 최대 크기(%). 가로형 워드마크↑ / 정사각 심볼↓ 로 시각 정규화.
-export type Sponsor = { src: string; name: string; scale: number };
+export type Sponsor = { src: string; name: string; scale: number; dark?: boolean };
 export const sponsors: Sponsor[] = [
   { src: "/sponsors/junglim.png", name: "정림건축", scale: 90 },
   { src: "/sponsors/seongihoek.png", name: "선기획 SUN+PARTNERS", scale: 90 },
@@ -75,6 +75,7 @@ export const sponsors: Sponsor[] = [
   { src: "/sponsors/haengnim.png", name: "행림건축", scale: 92 },
   { src: "/sponsors/tomoon.png", name: "토문건축", scale: 64 },
   { src: "/sponsors/gunwon.png", name: "건원건축", scale: 60 },
+  { src: "/sponsors/DA.jpeg", name: "dA architecture group", scale: 80, dark: true },
 ];
 
 export type TransitItem = { line: string; station: string; route: string };

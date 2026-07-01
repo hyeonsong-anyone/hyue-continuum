@@ -11,7 +11,11 @@ export function Sponsors() {
         <div className="grid grid-cols-3 gap-3">
           {sponsors.map((s) => (
             <RevealItem key={s.src} className="aspect-square">
-              <div className="flex h-full w-full items-center justify-center rounded-full bg-white">
+              <div
+                className={`flex h-full w-full items-center justify-center rounded-full ${
+                  s.dark ? "bg-black" : "bg-white"
+                }`}
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={s.src}
