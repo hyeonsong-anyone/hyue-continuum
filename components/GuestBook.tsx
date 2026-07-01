@@ -12,7 +12,7 @@ const MSG_MAX = 200;
 function Card({ m }: { m: Msg }) {
   return (
     <div className="mx-2 flex w-[240px] shrink-0 flex-col rounded-2xl border border-line bg-card px-4 py-2.5">
-      <p className="line-clamp-2 text-[13px] leading-snug text-ink/90">
+      <p className="whitespace-pre-wrap text-[13px] leading-snug text-ink/90">
         {m.message}
       </p>
       <p className="mt-1.5 text-[11.5px] font-semibold text-accent-soft">— {m.name}</p>
@@ -73,8 +73,8 @@ export function GuestBook() {
   // 두 줄로 분할 (짝/홀 인덱스) 후 각각 마퀴 트랙 구성
   const rowA = buildTrack(messages.filter((_, i) => i % 2 === 0));
   const rowB = buildTrack(messages.filter((_, i) => i % 2 === 1));
-  const durA = `${Math.max(16, rowA.length * 1.6)}s`;
-  const durB = `${Math.max(16, rowB.length * 1.6)}s`;
+  const durA = `${Math.max(16, rowA.length * 2)}s`;
+  const durB = `${Math.max(16, rowB.length * 2)}s`;
 
   return (
     <section className="w-full overflow-hidden py-24">
