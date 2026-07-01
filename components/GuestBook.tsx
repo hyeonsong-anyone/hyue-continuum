@@ -11,11 +11,11 @@ const MSG_MAX = 200;
 
 function Card({ m }: { m: Msg }) {
   return (
-    <div className="mx-2 flex w-[240px] shrink-0 flex-col rounded-2xl border border-line bg-card p-4">
-      <p className="line-clamp-4 text-[13.5px] leading-relaxed text-ink/90">
+    <div className="mx-2 flex w-[240px] shrink-0 flex-col rounded-2xl border border-line bg-card px-4 py-2.5">
+      <p className="line-clamp-2 text-[13px] leading-snug text-ink/90">
         {m.message}
       </p>
-      <p className="mt-3 text-[12px] font-semibold text-accent-soft">— {m.name}</p>
+      <p className="mt-1.5 text-[11.5px] font-semibold text-accent-soft">— {m.name}</p>
     </div>
   );
 }
@@ -24,7 +24,7 @@ function Card({ m }: { m: Msg }) {
 function buildTrack(list: Msg[]): Msg[] {
   if (list.length === 0) return [];
   let track = [...list];
-  while (track.length < 8) track = [...track, ...list];
+  while (track.length < 6) track = [...track, ...list];
   return [...track, ...track]; // seamless loop 위해 2배
 }
 
@@ -70,8 +70,11 @@ export function GuestBook() {
     }
   }
 
-  const track = buildTrack(messages);
-  const duration = `${Math.max(24, track.length * 3)}s`;
+  // 두 줄로 분할 (짝/홀 인덱스) 후 각각 마퀴 트랙 구성
+  const rowA = buildTrack(messages.filter((_, i) => i % 2 === 0));
+  const rowB = buildTrack(messages.filter((_, i) => i % 2 === 1));
+  const durA = `${Math.max(16, rowA.length * 1.6)}s`;
+  const durB = `${Math.max(16, rowB.length * 1.6)}s`;
 
   return (
     <section className="w-full overflow-hidden py-24">
@@ -125,15 +128,27 @@ export function GuestBook() {
         </Reveal>
       </div>
 
-      {/* 마퀴 */}
-      {track.length > 0 ? (
-        <div
-          className="marquee"
-          style={{ ["--marquee-duration" as string]: duration, animationDirection: "reverse" }}
-        >
-          {track.map((m, i) => (
-            <Card key={`${m.id}-${i}`} m={m} />
-          ))}
+      {/* 마퀴 (2줄, 반대 방향) */}
+      {rowA.length > 0 ? (
+        <div className="space-y-2.5">
+          <div
+            className="marquee"
+            style={{ ["--marquee-duration" as string]: durA, animationDirection: "reverse" }}
+          >
+            {rowA.map((m, i) => (
+              <Card key={`a-${m.id}-${i}`} m={m} />
+            ))}
+          </div>
+          {rowB.length > 0 && (
+            <div
+              className="marquee"
+              style={{ ["--marquee-duration" as string]: durB }}
+            >
+              {rowB.map((m, i) => (
+                <Card key={`b-${m.id}-${i}`} m={m} />
+              ))}
+            </div>
+          )}
         </div>
       ) : (
         <p className="px-6 text-center text-[13px] text-ink-sub">
